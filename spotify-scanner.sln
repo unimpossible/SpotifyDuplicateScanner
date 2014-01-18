@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spotify-scanner", "spotify-scanner\spotify-scanner.vcxproj", "{3F533DA5-7B71-474A-A948-5D22B847D332}"
+	ProjectSection(ProjectDependencies) = postProject
+		{861A8C9D-A995-49D9-BD27-491475D72DE9} = {861A8C9D-A995-49D9-BD27-491475D72DE9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libspotifypp", "..\..\..\..\..\..\Projects\dependencies\libspotify-plusplus\src\libspotifypp.vcxproj", "{861A8C9D-A995-49D9-BD27-491475D72DE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		MinSizeRel|Win32 = MinSizeRel|Win32
+		Release|Win32 = Release|Win32
+		RelWithDebInfo|Win32 = RelWithDebInfo|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.Debug|Win32.Build.0 = Debug|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.MinSizeRel|Win32.ActiveCfg = Release|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.MinSizeRel|Win32.Build.0 = Release|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.Release|Win32.ActiveCfg = Release|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.Release|Win32.Build.0 = Release|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.RelWithDebInfo|Win32.ActiveCfg = Release|Win32
+		{3F533DA5-7B71-474A-A948-5D22B847D332}.RelWithDebInfo|Win32.Build.0 = Release|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.Debug|Win32.Build.0 = Debug|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.Release|Win32.ActiveCfg = Release|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.Release|Win32.Build.0 = Release|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{861A8C9D-A995-49D9-BD27-491475D72DE9}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
