@@ -176,11 +176,14 @@ void scanner_events_try_remembered_login(){
 	//Done in regular log method to allow other tasks to occur
 	thread_pool.wait();
 
-	/*if(reLoggedIn)
-		SendMessage(m_hWnd, UWM_SCANNER_LOGGED_IN, 0, 0);
+	if(reLoggedIn)
+		ShowWindow(m_hWnd, SW_MINIMIZE); 
+	/*
 	else
-		SendMessage(m_hWnd, UWM_SCANNER_LOGGED_OUT, 0, 0);*/
+		SendMessage(m_hWnd, UWM_SCANNER_LOGGED_OUT, 0, 0);
+	*/
 	//We are going to wait for the callback to fire on its own..
+	
 }
 
 void scanner_events_login(){
@@ -283,7 +286,7 @@ void scanner_events_duplicates_startScan(){
 // Run check duplicates on plContainer
 void scanner_events_duplicates_runScan(){
 	//Reset our duplicate list on each scan
-	duplicateList.clear();
+	//duplicateList.clear();
 
 	for(int i = 1; i < plContainer->GetNumChildren(); i++)
 	{
