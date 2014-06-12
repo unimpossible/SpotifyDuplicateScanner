@@ -358,7 +358,6 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 // Message handler for Log Dialog box.
 INT_PTR CALLBACK LogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	std::string readBuffer;
 	static HWND logEdit = NULL;
 	
 
@@ -372,23 +371,27 @@ INT_PTR CALLBACK LogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lPar
 		logEdit = GetDlgItem(hDlg, IDC_LOGEDIT);
 		std::ifstream in("spotifyScanner.log", std::ios::in);;
 
+		std::string text;
+		std::string line;
+
 		if(in){
 			if(logEdit == NULL){
 				EndDialog(hDlg, 0);
 				DestroyWindow(hDlg);
 				return (INT_PTR)TRUE;
 			}
-			in.seekg(0, std::ios::end);
-			readBuffer.resize(in.tellg());
-			in.seekg(0, std::ios::beg);
-			in.read(&readBuffer[0], readBuffer.size());
+				
+			while(std::getline(in, line)){
+				line += "\r\n";
+				text +=line;
+			}
 			in.close();
 			
 		}
 		else
-			readBuffer = "Unable to open file";
+			text = "Unable to open file";
 		
-		SetWindowText(logEdit, _T(readBuffer.c_str()));
+		SetWindowText(logEdit, _T(text.c_str()));
 
 		return (INT_PTR)TRUE;
 		}
@@ -401,7 +404,9 @@ INT_PTR CALLBACK LogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lPar
 		if(LOWORD(wParam) == IDREFRESH)
 		{
 			logEdit = GetDlgItem(hDlg, IDC_LOGEDIT);
-			std::ifstream in("spotifyScanner.log", std::ios::in);;
+			std::ifstream in("spotifyScanner.log");
+			std::string text;
+			std::string line;
 
 			if(in){
 				if(logEdit == NULL){
@@ -409,17 +414,18 @@ INT_PTR CALLBACK LogCallback(HWND hDlg, UINT message, WPARAM wParam, LPARAM lPar
 					DestroyWindow(hDlg);
 					return (INT_PTR)TRUE;
 				}
-				in.seekg(0, std::ios::end);
-				readBuffer.resize(in.tellg());
-				in.seekg(0, std::ios::beg);
-				in.read(&readBuffer[0], readBuffer.size());
+				
+				while(std::getline(in, line)){
+					line += "\r\n";
+					text +=line;
+				}
 				in.close();
 			
 			}
 			else
-				readBuffer = "Unable to open file";
+				text = "Unable to open file";
 		
-			SetWindowText(logEdit, _T(readBuffer.c_str()));
+			SetWindowText(logEdit, _T(text.c_str()));
 
 			return (INT_PTR)TRUE;
 		}
