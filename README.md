@@ -2,6 +2,10 @@
 Spotify Duplicate Scanner
 =========================
 
+To Download a prebuilt version: Just get this file:
+https://github.com/unimpossible/SpotifyDuplicateScanner/raw/master/Spotify-Duplicates-Download.zip
+
+=====
 - A program which is designed to run in the background deleting duplicates as you add them to playlists.
 - Compiled with VC 2012 for Windows
 - Not a ton of work has gone into this, especially the GUI so far
